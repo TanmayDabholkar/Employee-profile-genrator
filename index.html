@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile Portal</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h2>Company Portal</h2>
+        <div class="role-switchers">
+            <button id="viewEmployeeBtn" class="nav-btn active">Employee View</button>
+            <button id="viewAdminBtn" class="nav-btn">Admin Dashboard</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="employeeWorkspace" class="workspace grid-layout">
+            <div class="form-section">
+                <h2>Create Employee Profile</h2>
+                <form id="profileForm">
+                    <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" required placeholder="Alex Morgan"></div>
+                    <div class="form-group"><label for="role">Job Title</label><input type="text" id="role" required placeholder="Senior Engineer"></div>
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <select id="department">
+                            <option value="Engineering">Engineering</option>
+                            <option value="Design">Design</option>
+                            <option value="Marketing">Marketing</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label for="bio">Short Bio</label><textarea id="bio" rows="3"></textarea></div>
+                    <button type="submit" class="btn">Generate & Save Profile</button>
+                </form>
+            </div>
+            <div class="preview-section">
+                <h2>Live Preview</h2>
+                <div class="profile-card hidden" id="profileCard">
+                    <img id="cardAvatar" src="" alt="Avatar">
+                    <h3 id="cardName"></h3>
+                    <p id="cardRole" class="role-text"></p>
+                    <div class="badge" id="cardDept"></div>
+                    <div class="meta-info">
+                        <p><strong>ID:</strong> <span id="cardId"></span></p>
+                        <p><strong>Email:</strong> <span id="cardEmail"></span></p>
+                    </div>
+                    <p id="cardBio" class="bio-text"></p>
+                </div>
+                <p id="placeholderText" class="placeholder-text">Fill out the form to generate a profile card.</p>
+            </div>
+        </div>
+
+        <div id="adminWorkspace" class="workspace hidden">
+            <div class="admin-header">
+                <h2>Master Employee Directory</h2>
+                <p>Access granted: Administrator</p>
+            </div>
+            <div id="adminDirectoryGrid" class="directory-grid"></div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
